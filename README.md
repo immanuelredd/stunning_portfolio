@@ -14,9 +14,9 @@
 ### Workflow
 
     Every feature, bug or modification will have a branch
-    __main__ 
+    main
      - branch for production only
-    **develop** 
+    develop 
      - branch for development and merges
 
     It might be a simple project but I believe it is always
