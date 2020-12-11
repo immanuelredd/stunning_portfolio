@@ -1,0 +1,173 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+
+  &-jcc {
+    justify-content: center;
+  }
+  &-jcsb {
+    justify-content: space-between;
+  }
+  &-aic {
+    align-items: center;
+  }
+  &-aife {
+    align-items: flex-end;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $font;
+}
+
+.wrapper {
+  position: relative;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "about"
+    "skills"
+    "projects"
+    "portfolio"
+    "footer";
+
+  .header {
+    grid-area: header;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: $tertiary;
+    height: 40px;
+    width: 100%;
+    a {
+      color: $secondary;
+    }
+  }
+  .main {
+    grid-area: main;
+    height: 100vh;
+    background-color: $primary;
+    color: $secondary;
+  }
+  .about {
+    grid-area: about;
+    height: 100vh;
+  }
+  .skills {
+    grid-area: skills;
+    height: 100vh;
+  }
+  .projects {
+    grid-area: projects;
+    height: 100vh;
+  }
+  .portfolio {
+    grid-area: portfolio;
+    height: 100vh;
+  }
+  .footer {
+    grid-area: footer;
+    background-color: $tertiary;
+    color: white;
+
+    hr {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
+
+header {
+  .nav {
+    height: 100%;
+    width: inherit;
+
+    &__brand,
+    &__bar {
+      li {
+        a {
+          display: block;
+          padding: 0.5rem 1rem;
+          text-transform: uppercase;
+          height: inherit;
+
+          &:hover {
+            background-color: rgba($color: $black, $alpha: 0.6);
+          }
+        }
+      }
+    }
+
+    &__brand {
+      font-size: 1.2rem;
+      margin-left: 5px;
+    }
+
+    &__bar {
+      margin-right: 5px;
+      @include down(medium) {
+        display: none;
+      }
+    }
+    &__harm {
+      width: 4rem;
+      height: 2.5rem;
+      margin-right: 5px;
+
+      .toggle {
+        width: 1.8rem;
+        height: 0.1rem;
+        background-color: white;
+
+        &::before,
+        &::after {
+          content: "";
+          height: 0.1rem;
+          background-color: white;
+          position: absolute;
+        }
+
+        &::before {
+          transform: translateY(0.5rem);
+          width: 2rem;
+        }
+        &::after {
+          transform: translateY(-0.5rem);
+          width: 2rem;
+        }
+      }
+
+      @include up(medium) {
+        display: none;
+      }
+    }
+  }
+}
