@@ -14,8 +14,10 @@
 ### Workflow
 
     Every feature, bug or modification will have a branch
-    **main** branch for production only
-    **develop** branch for development and merges
+    __main__ 
+     - branch for production only
+    **develop** 
+     - branch for development and merges
 
     It might be a simple project but I believe it is always
     good to practice what i was taught. This workflow was taught
