@@ -17,12 +17,17 @@ html {
 
 .flex {
   display: flex;
-
+  &-tac {
+    text-align: center;
+  }
   &-jcc {
     justify-content: center;
   }
   &-jcsb {
     justify-content: space-between;
+  }
+  &-jcse {
+    justify-content: space-evenly;
   }
   &-aic {
     align-items: center;
@@ -38,12 +43,21 @@ ul {
 
 a {
   text-decoration: none;
+
+  &.btn {
+    font-size: 1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 0.5rem 1rem;
+  }
 }
 
 body {
   height: 100%;
   width: 100%;
   font-family: $font;
+  background-color: $tertiary;
+  color: $secondary;
 }
 
 .wrapper {
@@ -56,7 +70,6 @@ body {
     "about"
     "skills"
     "projects"
-    "portfolio"
     "footer";
 
   .header {
@@ -64,7 +77,7 @@ body {
     position: fixed;
     left: 0;
     right: 0;
-    background-color: $tertiary;
+    background-color: $black;
     height: 40px;
     width: 100%;
     a {
@@ -74,38 +87,36 @@ body {
   .main {
     grid-area: main;
     height: 100vh;
-    background-color: $primary;
     color: $secondary;
   }
   .about {
     grid-area: about;
-    height: 100vh;
+    height: 80vh;
   }
   .skills {
     grid-area: skills;
-    height: 100vh;
+    height: 100%;
+    color: $secondary;
   }
   .projects {
     grid-area: projects;
-    height: 100vh;
+    height: 100%;
   }
-  .portfolio {
-    grid-area: portfolio;
-    height: 100vh;
-  }
+
   .footer {
     grid-area: footer;
-    background-color: $tertiary;
+    background-color: $black;
     color: white;
 
     hr {
       width: 80%;
-      margin: 0 auto;
+      margin: 0 auto 0.5rem;
     }
   }
 }
 
 header {
+  z-index: 300;
   .nav {
     height: 100%;
     width: inherit;
@@ -168,6 +179,141 @@ header {
       @include up(medium) {
         display: none;
       }
+    }
+  }
+}
+
+main {
+  border-bottom: 1px dotted $secondary;
+  .container {
+    border: 1px dotted rgba(225, 225, 255, 0.2);
+    .text {
+      padding: 1rem;
+      h1 {
+        margin-bottom: 0.5rem;
+        @include up(medium) {
+          font-size: 3rem;
+        }
+      }
+      p {
+        margin-bottom: 0.7rem;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      a {
+        display: inline-block;
+        color: $secondary;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+          color: $black;
+          background-color: $btn-hover;
+        }
+      }
+    }
+  }
+}
+.about {
+  padding: 1rem;
+  border-bottom: 1px dotted $secondary;
+  .container {
+    text-align: justify;
+
+    @include down(small) {
+      text-align: center;
+    }
+  }
+}
+.skills {
+  padding: 1rem 0;
+  border-bottom: 1px dotted $secondary;
+  .container {
+    width: 90%;
+    margin: auto;
+    padding: 1rem 0;
+
+    .title {
+      p {
+        margin: 0.5rem 0 0;
+      }
+      hr {
+        width: 20%;
+        margin: 0.5rem auto 0;
+      }
+    }
+  }
+
+  .row_one,
+  .row_two {
+    margin: 3rem 0;
+
+    @include up(medium) {
+      margin: 2rem 0;
+    }
+    i {
+      font-size: 3rem;
+      @include up(medium) {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+.projects {
+  padding: 2rem 0;
+  .container {
+    width: 100%;
+    hr {
+      width: 20%;
+      margin: 0.5rem auto 1rem;
+    }
+    .project-tile {
+      flex-wrap: wrap;
+      @include down(medium) {
+        flex-direction: column;
+      }
+      a {
+        display: block;
+        width: 300px;
+        margin: 1rem;
+        padding: 2rem 0;
+        box-shadow: 2px 2px 2px $secondary;
+        color: $secondary;
+
+        @include down(medium) {
+          flex-direction: column;
+          margin: 1rem auto;
+        }
+        &:hover {
+          background-color: $black;
+          transition: all 2s ease-in-out;
+        }
+      }
+    }
+  }
+}
+footer {
+  .container {
+    width: 90%;
+    margin: 1rem 0 0.5rem;
+
+    .footer-item {
+      margin: 0.5rem 0;
+      li {
+        margin: 0 1rem;
+      }
+    }
+    .copyright {
+      color: gray;
+    }
+  }
+  a {
+    color: $secondary;
+
+    &:hover {
+      color: $btn-hover;
+    }
+
+    i {
+      font-size: 1.5rem;
     }
   }
 }
