@@ -73,6 +73,13 @@ a.btn {
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0.5rem 1rem;
+  color: #fcf6f5ff;
+}
+
+a.btn:hover {
+  background-color: #000000;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 body {
@@ -119,7 +126,7 @@ body {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: about;
-  height: 80vh;
+  height: 100%;
 }
 
 .wrapper .skills {
@@ -166,10 +173,6 @@ header .nav__brand li a, header .nav__bar li a {
   height: inherit;
 }
 
-header .nav__brand li a:hover, header .nav__bar li a:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
 header .nav__brand {
   font-size: 1.2rem;
   margin-left: 5px;
@@ -177,6 +180,12 @@ header .nav__brand {
 
 header .nav__bar {
   margin-right: 5px;
+}
+
+header .nav__bar li a:hover {
+  background-color: #201c1c;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 @media (max-width: 767px) {
@@ -257,24 +266,42 @@ main .container .text a {
   transition: all 0.5s ease-in-out;
 }
 
-main .container .text a:hover {
-  color: #000000;
-  background-color: blanchedalmond;
-}
-
 .about {
-  padding: 1rem;
+  padding: 2rem 1rem;
   border-bottom: 1px dotted #fcf6f5ff;
 }
 
 .about .container {
+  width: 95%;
+  margin: auto;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.about .container .title {
+  margin-bottom: 1rem;
+}
+
+.about .container .text p {
+  line-height: 2rem;
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
-@media (max-width: 424px) {
-  .about .container {
-    text-align: center;
-  }
+.about .container .text ul {
+  margin: 1rem 0;
+}
+
+.about .container .text ul li {
+  margin: 0.5rem 0;
+}
+
+.about .container .text ul li span {
+  margin-right: 0.2rem;
+}
+
+.about .container .buuton a.btn {
+  display: inline-block;
 }
 
 .skills {
@@ -283,9 +310,9 @@ main .container .text a:hover {
 }
 
 .skills .container {
-  width: 90%;
+  width: 95%;
   margin: auto;
-  padding: 1rem 0;
+  padding: 1rem 0 0.5rem;
 }
 
 .skills .container .title p {
@@ -299,7 +326,69 @@ main .container .text a:hover {
 
 .skills .row_one,
 .skills .row_two {
-  margin: 3rem 0;
+  margin: 2rem auto;
+}
+
+.skills .row_one div,
+.skills .row_two div {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #fcf6f5ff;
+  border-radius: 10%;
+  position: relative;
+}
+
+.skills .row_one div i,
+.skills .row_two div i {
+  position: absolute;
+  font-size: 2rem;
+  left: 0;
+  padding: 0.5rem;
+  margin: 0.5rem 0.3rem;
+}
+
+.skills .row_one div i span,
+.skills .row_two div i span {
+  display: block;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  position: inherit;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 767px) {
+  .skills .row_one div i span,
+  .skills .row_two div i span {
+    font-size: 1rem;
+  }
+}
+
+.skills .row_one div small,
+.skills .row_two div small {
+  display: none;
+}
+
+.skills .row_one div:hover,
+.skills .row_two div:hover {
+  background-color: #000000;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+@media (max-width: 767px) {
+  .skills .row_one div,
+  .skills .row_two div {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 424px) {
+  .skills .row_one div,
+  .skills .row_two div {
+    width: 90px;
+    height: 80px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -309,20 +398,14 @@ main .container .text a:hover {
   }
 }
 
-.skills .row_one i,
-.skills .row_two i {
-  font-size: 3rem;
-}
-
-@media (min-width: 768px) {
-  .skills .row_one i,
-  .skills .row_two i {
-    font-size: 5rem;
-  }
+.skills a.btn {
+  display: inline-block;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 .projects {
-  padding: 2rem 0;
+  padding: 2rem 0 1rem;
 }
 
 .projects .container {
@@ -337,6 +420,7 @@ main .container .text a:hover {
 .projects .container .project-tile {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 767px) {
@@ -374,6 +458,10 @@ main .container .text a:hover {
   transition: all 2s ease-in-out;
 }
 
+.projects .container a.btn {
+  display: inline-block;
+}
+
 footer .container {
   width: 90%;
   margin: 1rem 0 0.5rem;
@@ -397,6 +485,8 @@ footer a {
 
 footer a:hover {
   color: blanchedalmond;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 footer a i {
