@@ -10,11 +10,9 @@ html {
   padding: 0;
   margin: 0;
 }
-
 .grid {
   display: grid;
 }
-
 .flex {
   display: flex;
   &-tac {
@@ -36,11 +34,9 @@ html {
     align-items: flex-end;
   }
 }
-
 ul {
   list-style: none;
 }
-
 a {
   text-decoration: none;
 
@@ -57,7 +53,6 @@ a {
     }
   }
 }
-
 body {
   height: 100%;
   width: 100%;
@@ -65,7 +60,6 @@ body {
   background-color: $tertiary;
   color: $secondary;
 }
-
 .wrapper {
   position: relative;
   height: 100vh;
@@ -120,7 +114,6 @@ body {
     }
   }
 }
-
 header {
   z-index: 300;
   .nav {
@@ -193,9 +186,7 @@ header {
     }
   }
 }
-
 main {
-  border-bottom: 1px dotted $secondary;
   .container {
     border: 1px dotted rgba(225, 225, 255, 0.2);
     .text {
@@ -213,39 +204,28 @@ main {
       }
       a {
         display: inline-block;
-        color: $secondary;
-        transition: all 0.5s ease-in-out;
       }
     }
   }
 }
 .about {
   padding: 2rem 1rem;
-  border-bottom: 1px dotted $secondary;
+  padding-bottom: 3rem;
   .container {
     width: 95%;
-    margin: auto;
+    margin: 0 auto;
     padding: 0.5rem;
     position: relative;
 
     .title {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
     }
     .text {
       p {
         line-height: 2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         text-align: justify;
-      }
-      ul {
-        margin: 1rem 0;
-
-        li {
-          margin: 0.5rem 0;
-          span {
-            margin-right: 0.2rem;
-          }
-        }
       }
     }
     .buuton {
@@ -257,13 +237,15 @@ main {
 }
 .skills {
   padding: 1rem 0;
-  border-bottom: 1px dotted $secondary;
+  padding-bottom: 3rem;
+
   .container {
     width: 95%;
     margin: auto;
     padding: 1rem 0 0.5rem;
 
     .title {
+      margin-bottom: 2rem;
       p {
         margin: 0.5rem 0 0;
       }
@@ -292,13 +274,15 @@ main {
         margin: 0.5rem 0.3rem;
         span {
           display: block;
-          font-size: 1.3rem;
-          text-transform: capitalize;
+          font-size: 1.1rem;
+          text-transform: uppercase;
           position: inherit;
-          margin-top: 0.3rem;
+          margin-top: 2rem;
 
           @include down(medium) {
             font-size: 1rem;
+            text-transform: capitalize;
+            margin-top: 0.5rem;
           }
         }
       }
@@ -327,13 +311,13 @@ main {
 
   a.btn {
     display: inline-block;
-    justify-self: end;
   }
 }
 .projects {
-  padding: 2rem 0 1rem;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
   .container {
-    width: 100%;
+    width: 95%;
     hr {
       width: 20%;
       margin: 0.5rem auto 1rem;
@@ -345,16 +329,20 @@ main {
         flex-direction: column;
       }
       a {
-        display: block;
-        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 200px;
         margin: 1rem;
-        padding: 2rem 0;
         box-shadow: 2px 2px 2px $secondary;
         color: $secondary;
+        border-radius: 6%;
 
         @include down(medium) {
           flex-direction: column;
           margin: 1rem auto;
+          width: 80%;
         }
         &:hover {
           background-color: $black;
@@ -365,6 +353,7 @@ main {
 
     a.btn {
       display: inline-block;
+      margin-top: 0.5rem;
     }
   }
 }
