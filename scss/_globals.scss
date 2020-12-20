@@ -40,6 +40,13 @@ ul {
 a {
   text-decoration: none;
 
+  &.link {
+    color: $secondary;
+    &:hover {
+      color: $hover;
+    }
+  }
+
   &.btn {
     font-size: 1em;
     text-transform: uppercase;
@@ -49,6 +56,7 @@ a {
 
     &:hover {
       background-color: $black;
+      color: $hover;
       transition: all 1s ease-in-out;
     }
   }
@@ -60,8 +68,12 @@ body {
   background-color: $tertiary;
   color: $secondary;
 }
+
+.noscroll {
+  overflow: hidden;
+}
+
 .wrapper {
-  position: relative;
   height: 100vh;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -74,10 +86,6 @@ body {
 
   .header {
     grid-area: header;
-    position: fixed;
-    left: 0;
-    right: 0;
-    background-color: $black;
     height: 40px;
     width: 100%;
     a {
@@ -115,10 +123,15 @@ body {
   }
 }
 header {
-  z-index: 300;
+  position: relative;
   .nav {
-    height: 100%;
-    width: inherit;
+    width: 100%;
+    z-index: 300;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 0.2rem;
 
     &__brand,
     &__bar {
@@ -145,6 +158,7 @@ header {
           &:hover {
             background-color: $tertiary;
             transition: all 1s ease-in-out;
+            color: $hover;
           }
         }
       }
@@ -156,11 +170,13 @@ header {
       width: 4rem;
       height: 2.5rem;
       margin-right: 5px;
+      cursor: pointer;
 
       .toggle {
         width: 1.8rem;
         height: 0.1rem;
         background-color: white;
+        transition: all 1s ease-in-out;
 
         &::before,
         &::after {
@@ -168,6 +184,7 @@ header {
           height: 0.1rem;
           background-color: white;
           position: absolute;
+          transition: all 1s ease-in-out;
         }
 
         &::before {
@@ -185,10 +202,51 @@ header {
       }
     }
   }
+  .overlay {
+    display: none;
+    position: fixed;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $black;
+
+    .mobile_nav {
+      margin-top: 2.3rem;
+      li {
+        a {
+          display: block;
+          width: 100%;
+          border-bottom: 1px solid $secondary;
+          padding: 1rem 0;
+          padding-left: 1.2rem;
+          text-transform: uppercase;
+          transition: all 1s ease-in-out;
+
+          &:hover {
+            background-color: $tertiary;
+            color: $hover;
+            padding-left: 5rem;
+            transition: all 1s ease-in-out;
+          }
+        }
+      }
+    }
+  }
 }
 main {
   .container {
     border: 1px dotted rgba(225, 225, 255, 0.2);
+    .image {
+      text-align: center;
+      img {
+        width: 100px;
+        margin-top: 0.5rem;
+        border-radius: 50%;
+      }
+    }
     .text {
       padding: 1rem;
       h1 {
@@ -210,7 +268,6 @@ main {
 }
 .about {
   padding: 2rem 1rem;
-  padding-bottom: 3rem;
   .container {
     width: 95%;
     margin: 0 auto;
@@ -220,6 +277,10 @@ main {
     .title {
       margin-bottom: 2rem;
       text-align: center;
+      hr {
+        width: 10%;
+        margin: 0.5rem auto 0;
+      }
     }
     .text {
       p {
@@ -237,7 +298,6 @@ main {
 }
 .skills {
   padding: 1rem 0;
-  padding-bottom: 3rem;
 
   .container {
     width: 95%;
@@ -256,33 +316,31 @@ main {
     }
   }
 
-  .row_one,
-  .row_two {
+  .row {
     margin: 2rem auto;
+    grid-template-columns: repeat(2, 1fr);
 
     div {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 90px;
+      margin: 1rem auto;
       border: 1px solid $secondary;
-      border-radius: 10%;
+      border-radius: 1rem 0 1rem 0;
       position: relative;
       i {
-        position: absolute;
         font-size: 2rem;
-        left: 0;
         padding: 0.5rem;
-        margin: 0.5rem 0.3rem;
+        margin: 0.5rem auto;
         span {
           display: block;
           font-size: 1.1rem;
           text-transform: uppercase;
           position: inherit;
-          margin-top: 2rem;
+          margin-top: 1rem;
 
           @include down(medium) {
-            font-size: 1rem;
-            text-transform: capitalize;
-            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            margin-top: 0.7rem;
           }
         }
       }
@@ -292,20 +350,22 @@ main {
       &:hover {
         background-color: $black;
         transition: all 1s ease-in-out;
+        color: $hover;
+        box-shadow: 1px 2px 2px $hover;
       }
 
-      @include down(medium) {
-        width: 100px;
-        height: 100px;
-      }
       @include down(small) {
-        width: 90px;
-        height: 80px;
+        width: 100px;
+      }
+
+      @include up(medium) {
+        width: 200px;
+        height: 100px;
       }
     }
 
     @include up(medium) {
-      margin: 2rem 0;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
@@ -315,7 +375,6 @@ main {
 }
 .projects {
   padding: 2rem 0;
-  padding-bottom: 3rem;
   .container {
     width: 95%;
     hr {
@@ -323,31 +382,45 @@ main {
       margin: 0.5rem auto 1rem;
     }
     .project-tile {
-      flex-wrap: wrap;
       margin-bottom: 0.5rem;
-      @include down(medium) {
-        flex-direction: column;
-      }
       a {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 200px;
-        height: 200px;
-        margin: 1rem;
-        box-shadow: 2px 2px 2px $secondary;
+        width: 180px;
+        height: 100px;
+        margin: 1rem auto;
         color: $secondary;
-        border-radius: 6%;
-
-        @include down(medium) {
-          flex-direction: column;
-          margin: 1rem auto;
-          width: 80%;
-        }
+        border: 1px solid $secondary;
+        border-radius: 0 1rem 0 1rem;
         &:hover {
           background-color: $black;
           transition: all 2s ease-in-out;
+          color: $hover;
         }
+
+        .card {
+          width: 100%;
+          margin: 0 auto;
+          h4 {
+            margin-bottom: 0.5rem;
+          }
+          small {
+            color: gray;
+          }
+        }
+        @include down(small) {
+          width: 200px;
+        }
+      }
+      @include up(medium) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include down(medium) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include down(small) {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -384,4 +457,23 @@ footer {
       font-size: 1.5rem;
     }
   }
+}
+
+//open toggle
+.nav__harm.open .toggle {
+  background-color: transparent;
+  transition: all 1s ease-in-out;
+}
+.nav__harm.open .toggle::before {
+  transform: rotate(45deg);
+  transition: all 1s ease-in-out;
+}
+.nav__harm.open .toggle::after {
+  transform: rotate(-45deg);
+  transition: all 1s ease-in-out;
+}
+
+//transform toggle
+.sticky {
+  background-color: $black;
 }
