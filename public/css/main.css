@@ -134,14 +134,12 @@ body {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: about;
-  height: 100%;
 }
 
 .wrapper .skills {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: skills;
-  height: 100%;
   color: #fcf6f5ff;
 }
 
@@ -149,7 +147,53 @@ body {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: projects;
+}
+
+.wrapper .about,
+.wrapper .skills,
+.wrapper .projects {
   height: 100%;
+}
+
+@media (min-width: 1200px) {
+  .wrapper .about,
+  .wrapper .skills,
+  .wrapper .projects {
+    height: 100vh;
+  }
+}
+
+.wrapper .about .container,
+.wrapper .skills .container,
+.wrapper .projects .container {
+  width: 95%;
+  padding: 1rem;
+  margin: auto;
+}
+
+.wrapper .about .container .title,
+.wrapper .skills .container .title,
+.wrapper .projects .container .title {
+  font-size: 2rem;
+  text-align: left;
+  position: relative;
+}
+
+.wrapper .about .container .title::after,
+.wrapper .skills .container .title::after,
+.wrapper .projects .container .title::after {
+  content: "";
+  width: 5rem;
+  height: 0.2rem;
+  position: absolute;
+  margin-top: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.wrapper .about .container .title hr,
+.wrapper .skills .container .title hr,
+.wrapper .projects .container .title hr {
+  display: none;
 }
 
 .wrapper .footer {
@@ -189,6 +233,7 @@ header .nav__brand li a, header .nav__bar li a {
 header .nav__brand {
   font-size: 1.2rem;
   margin-left: 5px;
+  z-index: 400;
 }
 
 header .nav__bar {
@@ -221,6 +266,7 @@ header .nav__harm .toggle {
   background-color: white;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  z-index: 400;
 }
 
 header .nav__harm .toggle::before, header .nav__harm .toggle::after {
@@ -228,8 +274,8 @@ header .nav__harm .toggle::before, header .nav__harm .toggle::after {
   height: 0.1rem;
   background-color: white;
   position: absolute;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 header .nav__harm .toggle::before {
@@ -286,17 +332,7 @@ header .overlay .mobile_nav li a:hover {
 }
 
 main .container {
-  border: 1px dotted rgba(225, 225, 255, 0.2);
-}
-
-main .container .image {
-  text-align: center;
-}
-
-main .container .image img {
-  width: 100px;
-  margin-top: 0.5rem;
-  border-radius: 50%;
+  border: 1px dotted rgba(255, 235, 205, 0.2);
 }
 
 main .container .text {
@@ -323,67 +359,30 @@ main .container .text a {
   display: inline-block;
 }
 
-.about {
-  padding: 2rem 1rem;
-}
-
-.about .container {
-  width: 95%;
-  margin: 0 auto;
-  padding: 0.5rem;
-  position: relative;
-}
-
-.about .container .title {
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.about .container .title hr {
-  width: 10%;
-  margin: 0.5rem auto 0;
-}
-
 .about .container .text p {
   line-height: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   text-align: justify;
 }
 
-.about .container .buuton a.btn {
+.about .container a.btn {
   display: inline-block;
 }
 
-.skills {
-  padding: 1rem 0;
+@media (min-width: 1200px) {
+  .about .container a.btn {
+    position: absolute;
+    right: 4rem;
+  }
 }
 
-.skills .container {
-  width: 95%;
-  margin: auto;
-  padding: 1rem 0 0.5rem;
-}
-
-.skills .container .title {
-  margin-bottom: 2rem;
-}
-
-.skills .container .title p {
-  margin: 0.5rem 0 0;
-}
-
-.skills .container .title hr {
-  width: 20%;
-  margin: 0.5rem auto 0;
-}
-
-.skills .row {
+.skills .container .row {
   margin: 2rem auto;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
 }
 
-.skills .row div {
+.skills .container .row div {
   width: 120px;
   height: 90px;
   margin: 1rem auto;
@@ -392,13 +391,13 @@ main .container .text a {
   position: relative;
 }
 
-.skills .row div i {
+.skills .container .row div i {
   font-size: 2rem;
   padding: 0.5rem;
   margin: 0.5rem auto;
 }
 
-.skills .row div i span {
+.skills .container .row div i span {
   display: block;
   font-size: 1.1rem;
   text-transform: uppercase;
@@ -407,17 +406,17 @@ main .container .text a {
 }
 
 @media (max-width: 767px) {
-  .skills .row div i span {
+  .skills .container .row div i span {
     font-size: 0.8rem;
     margin-top: 0.7rem;
   }
 }
 
-.skills .row div small {
+.skills .container .row div small {
   display: none;
 }
 
-.skills .row div:hover {
+.skills .container .row div:hover {
   background-color: #000000;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
@@ -427,105 +426,116 @@ main .container .text a {
 }
 
 @media (max-width: 424px) {
-  .skills .row div {
+  .skills .container .row div {
     width: 100px;
   }
 }
 
 @media (min-width: 768px) {
-  .skills .row div {
+  .skills .container .row div {
     width: 200px;
     height: 100px;
   }
 }
 
 @media (min-width: 768px) {
-  .skills .row {
+  .skills .container .row {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.skills a.btn {
+.skills .container a.btn {
   display: inline-block;
 }
 
-.projects {
-  padding: 2rem 0;
+@media (min-width: 1200px) {
+  .skills .container a.btn {
+    position: absolute;
+    right: 9rem;
+  }
 }
 
 .projects .container {
-  width: 95%;
-}
-
-.projects .container hr {
-  width: 20%;
-  margin: 0.5rem auto 1rem;
+  position: relative;
 }
 
 .projects .container .project-tile {
-  margin-bottom: 0.5rem;
+  margin: 2rem auto;
 }
 
-.projects .container .project-tile a {
+.projects .container .project-tile .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 180px;
-  height: 100px;
+  width: 300px;
+  height: 250px;
   margin: 1rem auto;
+  background-color: rgba(0, 0, 0, 0.4);
   color: #fcf6f5ff;
-  border: 1px solid #fcf6f5ff;
   border-radius: 0 1rem 0 1rem;
 }
 
-.projects .container .project-tile a:hover {
+.projects .container .project-tile .card:hover {
   background-color: #000000;
   -webkit-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
   color: blanchedalmond;
 }
 
-.projects .container .project-tile a .card {
-  width: 100%;
-  margin: 0 auto;
+.projects .container .project-tile .card:last-child {
+  display: none;
 }
 
-.projects .container .project-tile a .card h4 {
+.projects .container .project-tile .card .card_title {
+  margin: 0 0 0.5rem;
+}
+
+.projects .container .project-tile .card .card_title h4 {
   margin-bottom: 0.5rem;
 }
 
-.projects .container .project-tile a .card small {
+.projects .container .project-tile .card .card_title small {
   color: gray;
 }
 
+.projects .container .project-tile .card .card_text {
+  margin: 2rem auto;
+}
+
+.projects .container .project-tile .card .card_text p {
+  line-height: 1.5rem;
+}
+
 @media (max-width: 424px) {
-  .projects .container .project-tile a {
-    width: 200px;
+  .projects .container .project-tile .card {
+    width: 250px;
+    height: 280px;
+    margin: 0.5rem auto;
   }
 }
 
 @media (min-width: 768px) {
-  .projects .container .project-tile {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
   .projects .container .project-tile {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 424px) {
+@media (min-width: 1200px) {
+  .projects .container .project-tile {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
   .projects .container .project-tile {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -534,7 +544,13 @@ main .container .text a {
 
 .projects .container a.btn {
   display: inline-block;
-  margin-top: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  .projects .container a.btn {
+    position: absolute;
+    right: 4rem;
+  }
 }
 
 footer .container {

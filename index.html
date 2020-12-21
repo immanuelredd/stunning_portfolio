@@ -11,15 +11,6 @@
     <div class="wrapper grid">
       <!--header start-->
       <header id="header" class="header">
-        <div class="overlay">
-          <ul class="mobile_nav">
-            <li class="mobItems"><a href="#welcome-section">About</a></li>
-
-            <li class="mobItems"><a href="#skills">Skills</a></li>
-
-            <li class="mobItems"><a href="#projects">Projects</a></li>
-          </ul>
-        </div>
         <nav class="nav flex flex-jcsb flex-aic">
           <div class="nav__brand">
             <ul>
@@ -27,7 +18,7 @@
             </ul>
           </div>
           <ul class="nav__bar flex">
-            <li class="navitems"><a href="#welcome-section">About</a></li>
+            <li class="navitems"><a href="#about">About</a></li>
 
             <li class="navitems"><a href="#skills">Skills</a></li>
 
@@ -35,6 +26,15 @@
           </ul>
           <div class="nav__harm flex flex-jcc flex-aic" id="harm">
             <div class="toggle"></div>
+            <div class="overlay">
+              <ul class="mobile_nav">
+                <li class="mobItems"><a href="#about">About</a></li>
+
+                <li class="mobItems"><a href="#skills">Skills</a></li>
+
+                <li class="mobItems"><a href="#projects">Projects</a></li>
+              </ul>
+            </div>
           </div>
         </nav>
       </header>
@@ -59,11 +59,12 @@
 
       <!--about start-->
       <section id="about" class="about flex flex-jcc flex-aic flex-tac">
-        <div class="container grid">
+        <div class="container">
           <div class="title">
             <h2>About Me</h2>
             <hr />
           </div>
+          <div class="image"></div>
           <div class="text">
             <p>
               My full name is Okputu, Okputu Emmanuel. I am a christian from
@@ -88,8 +89,7 @@
       <section id="skills" class="skills flex flex-jcc flex-aic flex-tac">
         <div class="container">
           <div class="title">
-            <h2>Skills | Technologies</h2>
-            <p>Below are some tools I can handle</p>
+            <h2>Skills</h2>
             <hr />
           </div>
           <div class="row grid">
@@ -127,50 +127,103 @@
       <!--project start-->
       <section id="projects" class="projects flex flex-jcc flex-aic flex-tac">
         <div class="container">
-          <h2>Projects Implemented</h2>
-          <hr />
+          <div class="title">
+            <h2>Projects</h2>
+            <hr />
+          </div>
           <div class="project-tile grid">
-            <a
-              target="_blank"
-              href="https://immanuelredd.github.io/basic_form/"
-            >
-              <div class="card">
-                <div class="container">
+            <div class="card">
+              <div class="container">
+                <div class="card_title">
                   <h4><b>Simple Form</b></h4>
                   <small>Html + Css</small>
                 </div>
-              </div>
-            </a>
-            <a
-              target="_blank"
-              href="https://testimonial-slider-jfvpk2rlp.vercel.app/"
-            >
-              <div class="card">
-                <div class="container">
-                  <h4><b>Testimonial Slider</b></h4>
-                  <small>Html+ Css + Js</small>
+                <div class="card_text">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi, autem?
+                  </p>
+                </div>
+                <div class="card_icon flex flex-jcsb">
+                  <i class="fas fa-code"></i>
+                  <a
+                    target="_blank"
+                    href="https://immanuelredd.github.io/basic_form/"
+                    ><i class="far fa-eye"> </i>
+                  </a>
                 </div>
               </div>
-            </a>
-            <a
-              target="_blank"
-              href="https://immanuelredd.github.io/todoapp.github.io/"
-            >
-              <div class="card">
-                <div class="container">
+            </div>
+
+            <div class="card">
+              <div class="container">
+                <div class="card_title">
+                  <h4><b>Testimonial Slider</b></h4>
+                  <small>Html + Css + Js</small>
+                </div>
+                <div class="card_text">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi, autem?
+                  </p>
+                </div>
+                <div class="card_icon flex flex-jcsb">
+                  <i class="fas fa-code"></i>
+                  <a
+                    target="_blank"
+                    href="https://testimonial-slider-jfvpk2rlp.vercel.app/"
+                    ><i class="far fa-eye"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="container">
+                <div class="card_title">
                   <h4><b>Todo App</b></h4>
                   <small>Html + Scss + Js</small>
                 </div>
+                <div class="card_text">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi, autem?
+                  </p>
+                </div>
+                <div class="card_icon flex flex-jcsb">
+                  <i class="fas fa-code"></i>
+                  <a
+                    target="_blank"
+                    href="https://immanuelredd.github.io/todoapp.github.io/"
+                    ><i class="far fa-eye"></i>
+                  </a>
+                </div>
               </div>
-            </a>
-            <a target="_blank" href="https://kelvinakparanta.com/index.php">
-              <div class="card">
-                <div class="container">
+            </div>
+
+            <div class="card">
+              <div class="container">
+                <div class="card_title">
                   <h4><b>Portfolio & Blog</b></h4>
                   <small>Scss + Php + Sql</small>
                 </div>
+                <div class="card_text">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eligendi, autem?
+                  </p>
+                </div>
+                <div class="card_icon flex flex-jcsb">
+                  <i class="fas fa-code"></i>
+                  <a
+                    target="_blank"
+                    href="https://kelvinakparanta.com/index.php"
+                  >
+                    <i class="far fa-eye"> </i>
+                  </a>
+                </div>
               </div>
-            </a>
+            </div>
           </div>
           <a class="btn" href="#">View more</a>
         </div>
@@ -219,6 +272,6 @@
       </footer>
       <!--footer end-->
     </div>
-    <script src="/public/js/main.js"></script>
+    <script src="public/js/main.js"></script>
   </body>
 </html>
