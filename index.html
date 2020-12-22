@@ -50,7 +50,7 @@
             </h1>
             <div class="info">
               <p>A Software Developer</p>
-              <a class="btn" href="#footer">contact me</a>
+              <a class="btn" href="#contact">contact me</a>
             </div>
           </div>
         </section>
@@ -61,7 +61,7 @@
       <section id="about" class="about flex flex-jcc flex-aic flex-tac">
         <div class="container">
           <div class="title">
-            <h2>About Me</h2>
+            <h2>About</h2>
             <hr />
           </div>
           <div class="image"></div>
@@ -75,9 +75,8 @@
               working with passionate individuals. Currently, I work as a
               Software developer for
               <a target="_blank" class="link" href="https://activecodehub.com/"
-                >Active Code Business Hub</a
-              >
-              ......
+                >Active Code Business Hub
+              </a>
             </p>
           </div>
           <div class="button"><a class="btn" href="#">Download CV</a></div>
@@ -119,8 +118,18 @@
               <small>Proficient</small>
             </div>
           </div>
-          <a class="btn" href="#">View all</a>
+          <a class="btn" href="#" id="viewAll">View all</a>
         </div>
+        <!--skills Modal-->
+        <div class="modal">
+          <div class="modal__content">
+            <span class="close">&times;</span>
+            <ul>
+              <li><a href="">red</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--skills Modal end-->
       </section>
       <!--skills end-->
 
@@ -145,7 +154,7 @@
                   </p>
                 </div>
                 <div class="card_icon flex flex-jcsb">
-                  <i class="fas fa-code"></i>
+                  <a href=""><i class="fas fa-code"></i></a>
                   <a
                     target="_blank"
                     href="https://immanuelredd.github.io/basic_form/"
@@ -168,7 +177,7 @@
                   </p>
                 </div>
                 <div class="card_icon flex flex-jcsb">
-                  <i class="fas fa-code"></i>
+                  <a href=""><i class="fas fa-code"></i></a>
                   <a
                     target="_blank"
                     href="https://testimonial-slider-jfvpk2rlp.vercel.app/"
@@ -191,7 +200,7 @@
                   </p>
                 </div>
                 <div class="card_icon flex flex-jcsb">
-                  <i class="fas fa-code"></i>
+                  <a href=""><i class="fas fa-code"></i></a>
                   <a
                     target="_blank"
                     href="https://immanuelredd.github.io/todoapp.github.io/"
@@ -214,7 +223,7 @@
                   </p>
                 </div>
                 <div class="card_icon flex flex-jcsb">
-                  <i class="fas fa-code"></i>
+                  <a href=""><i class="fas fa-code"></i></a>
                   <a
                     target="_blank"
                     href="https://kelvinakparanta.com/index.php"
@@ -229,6 +238,34 @@
         </div>
       </section>
       <!--project end-->
+
+      <!--Contact-modal start-->
+      <section id="contact" class="contact flex flex-aic flex-jcc">
+        <div class="container">
+          <div class="title">
+            <h2>Contact</h2>
+          </div>
+          <form action="" id="form" class="form grid">
+            <div class="name">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" />
+            </div>
+
+            <div class="subject">
+              <label for="subject">Subject:</label>
+              <input type="text" name="subject" id="subject" />
+            </div>
+
+            <div class="message">
+              <label for="message">Message:</label>
+              <textarea name="message" id="message"></textarea>
+            </div>
+
+            <a name="send" type="submit" class="btn">Send</a>
+          </form>
+        </div>
+      </section>
+      <!--contact End-->
 
       <!--footer start-->
       <footer id="footer" class="footer flex flex-jcc flex-tac flex-aic">

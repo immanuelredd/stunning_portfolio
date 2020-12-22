@@ -82,6 +82,7 @@ body {
     "about"
     "skills"
     "projects"
+    "contact"
     "footer";
 
   .header {
@@ -107,10 +108,14 @@ body {
   .projects {
     grid-area: projects;
   }
+  .contact {
+    grid-area: contact;
+  }
 
   .about,
   .skills,
-  .projects {
+  .projects,
+  .contact {
     height: 100%;
     @include up(large) {
       height: 100vh;
@@ -295,8 +300,13 @@ main {
     .text {
       p {
         line-height: 2rem;
+        font-size: 1.2rem;
         margin: 2rem 0;
+        color: gray;
         text-align: justify;
+        @include down(small) {
+          text-align: left;
+        }
       }
     }
     a.btn {
@@ -373,6 +383,25 @@ main {
       }
     }
   }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, $black, $grey);
+    z-index: 500;
+
+    &__content {
+      background-color: $black;
+      padding: 2rem;
+      margin: 15% auto;
+      z-index: 600;
+      width: 80%;
+    }
+  }
 }
 .projects {
   .container {
@@ -386,14 +415,13 @@ main {
         width: 300px;
         height: 250px;
         margin: 1rem auto;
-        background-color: rgba($color: $black, $alpha: 0.4);
-
+        background-color: $black;
         color: $secondary;
         border-radius: 0 1rem 0 1rem;
+        transition: all 1s ease-in-out;
         &:hover {
-          background-color: $black;
-          transition: all 2s ease-in-out;
-          color: $hover;
+          transition: all 1s ease-in-out;
+          border-radius: 0;
         }
         &:last-child {
           display: none;
@@ -411,8 +439,20 @@ main {
 
         .card_text {
           margin: 2rem auto;
+          color: gray;
           p {
             line-height: 1.5rem;
+          }
+        }
+
+        .card_icon {
+          a {
+            color: $secondary;
+            cursor: pointer;
+            &:hover {
+              transition: all 1s ease-in-out;
+              color: $hover;
+            }
           }
         }
 
@@ -440,6 +480,40 @@ main {
       @include up(large) {
         position: absolute;
         right: 4rem;
+      }
+    }
+  }
+}
+.contact {
+  .container {
+    .title {
+      margin-bottom: 2rem;
+    }
+    .form {
+      width: 90%;
+      margin: auto;
+
+      label {
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 0.5rem;
+        outline: none;
+        margin-bottom: 0.5rem;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        padding: 0.5rem;
+        outline: none;
+      }
+
+      .btn {
+        width: 5rem;
+        margin: 1rem auto;
+        cursor: pointer;
       }
     }
   }
