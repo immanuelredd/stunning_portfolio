@@ -385,6 +385,10 @@ main .container .text a {
   }
 }
 
+.about .container .text p span.name {
+  color: #fcf6f5ff;
+}
+
 .about .container a.btn {
   display: inline-block;
 }
@@ -467,6 +471,7 @@ main .container .text a {
 
 .skills .container a.btn {
   display: inline-block;
+  cursor: pointer;
 }
 
 @media (min-width: 1200px) {
@@ -491,10 +496,56 @@ main .container .text a {
 
 .skills .modal__content {
   background-color: #000000;
-  padding: 2rem;
-  margin: 15% auto;
+  color: #fcf6f5ff;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   z-index: 600;
   width: 80%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.skills .modal__content .close {
+  float: right;
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.skills .modal__content .other_skills {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.skills .modal__content .other_skills ul {
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .skills .modal__content .other_skills ul {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+  }
+}
+
+.skills .modal__content .other_skills ul li {
+  margin: 0.5rem;
+  background-color: blanchedalmond;
+  padding: 0.5rem;
+  color: #201c1c;
+  cursor: pointer;
+}
+
+@media (max-width: 424px) {
+  .skills .modal__content {
+    -webkit-transform: translateY(35%);
+            transform: translateY(35%);
+  }
 }
 
 .projects .container {

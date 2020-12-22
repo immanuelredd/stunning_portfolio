@@ -307,6 +307,9 @@ main {
         @include down(small) {
           text-align: left;
         }
+        span.name {
+          color: $secondary;
+        }
       }
     }
     a.btn {
@@ -376,6 +379,7 @@ main {
 
     a.btn {
       display: inline-block;
+      cursor: pointer;
 
       @include up(large) {
         position: absolute;
@@ -396,10 +400,46 @@ main {
 
     &__content {
       background-color: $black;
-      padding: 2rem;
-      margin: 15% auto;
+      color: $secondary;
+      transform: translateY(50%);
       z-index: 600;
       width: 80%;
+      height: 300px;
+      margin: 0 auto;
+      .close {
+        float: right;
+        font-size: 3rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+      }
+
+      .other_skills {
+        width: 100%;
+        margin: 0 auto;
+        ul {
+          width: 100%;
+
+          flex-wrap: wrap;
+
+          @include up(medium) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0.5rem;
+          }
+
+          li {
+            margin: 0.5rem;
+            background-color: $hover;
+            padding: 0.5rem;
+            color: $tertiary;
+            cursor: pointer;
+          }
+        }
+      }
+
+      @include down(small) {
+        transform: translateY(35%);
+      }
     }
   }
 }
