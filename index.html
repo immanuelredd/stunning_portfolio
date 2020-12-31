@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="public/css/main.css" />
     <title>Okputu | Portfolio</title>
   </head>
-  <body>
-    <div class="wrapper grid">
+  <body onload="preLoad()">
+    <div class="loader flex flex-jcc flex-aic">
+      <div class="loading">
+        <span>loading...</span>
+      </div>
+    </div>
+    <div class="wrapper grid slideUp">
       <!--header start-->
       <header id="header" class="header">
         <nav class="nav flex flex-jcsb flex-aic">
