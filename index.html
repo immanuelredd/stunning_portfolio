@@ -14,30 +14,62 @@
         <nav class="nav flex flex-jcsb flex-aic">
           <div class="nav__brand">
             <ul>
-              <li class="navlogo"><a href="index.html">O.E</a></li>
+              <li><a href="index.html">O.E</a></li>
             </ul>
           </div>
-          <ul class="nav__bar flex">
-            <li class="navitems"><a href="#about">About</a></li>
+          <ul class="nav__bar flex" id="nav_bar">
+            <li><a href="#about" class="link active">About</a></li>
 
-            <li class="navitems"><a href="#skills">Skills</a></li>
+            <li><a href="#skills" class="link">Skills</a></li>
 
-            <li class="navitems"><a href="#projects">Projects</a></li>
+            <li><a href="#projects" class="link">Projects</a></li>
 
-            <li class="navitems"><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="link">Contact</a></li>
           </ul>
           <div class="nav__harm flex flex-jcc flex-aic" id="harm">
             <div class="toggle"></div>
             <div class="overlay">
               <ul class="mobile_nav">
-                <li class="mobItems"><a href="#about">About</a></li>
+                <li><a href="#about" class="link">About</a></li>
 
-                <li class="mobItems"><a href="#skills">Skills</a></li>
+                <li><a href="#skills" class="link">Skills</a></li>
 
-                <li class="mobItems"><a href="#projects">Projects</a></li>
+                <li><a href="#projects" class="link">Projects</a></li>
 
-                <li class="navitems"><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="link">Contact</a></li>
               </ul>
+              <div class="mobile_social">
+                <h3 class="flex-tac">Lets Work together</h3>
+                <ul class="flex flex-jcse">
+                  <li>
+                    <a
+                      href="https://twitter.com/immanuelredd"
+                      id="profile-link"
+                      target="_blank"
+                    >
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://github.com/immanuelredd"
+                      id="profile-link"
+                      target="_blank"
+                    >
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://codepen.io/Malcolmred/pens/"
+                      id="profile-link"
+                      target="_blank"
+                    >
+                      <i class="fab fa-codepen"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </nav>
@@ -45,17 +77,16 @@
       <!--header end-->
 
       <!--main start-->
-      <main id="main" class="main flex flex-jcc flex-aic">
+      <main id="main" class="main flex flex-jcc flex-aic flex-tac">
         <section id="welcome-section" class="container">
           <div class="text">
+            <img src="public/images/redd.png" alt="redd" class="image" />
             <h1>
               Hey, I'm
               <span>Okputu.</span>
             </h1>
-            <div class="info">
-              <p>A Software Developer</p>
-              <a class="btn" href="#contact">contact me</a>
-            </div>
+            <p>A Software Developer</p>
+            <a class="btn" href="#contact">contact me</a>
           </div>
         </section>
       </main>
@@ -68,7 +99,6 @@
             <h2>About</h2>
             <hr />
           </div>
-          <div class="image"></div>
           <div class="text">
             <p>
               My full name is
@@ -84,13 +114,13 @@
               </a>
             </p>
           </div>
-          <div class="button">
-            <a
-              class="btn"
-              href="https://drive.google.com/file/d/13Bds1egnVo4VZmdbM2qMuKBo4ArCnhRz/view?usp=sharing"
-              >Download CV</a
-            >
-          </div>
+
+          <a
+            class="btn"
+            href="https://drive.google.com/file/d/13Bds1egnVo4VZmdbM2qMuKBo4ArCnhRz/view?usp=sharing"
+            target="_blank"
+            >Download CV</a
+          >
         </div>
       </section>
       <!--about end-->
@@ -105,70 +135,37 @@
           <div class="row grid">
             <div>
               <i class="fab fa-html5"><span>html</span></i>
-              <small>Proficient</small>
             </div>
             <div>
               <i class="fab fa-css3-alt"><span>Css</span></i>
-              <small>Proficient</small>
             </div>
             <div>
-              <i class="fab fa-bootstrap"><span>Bootstrap</span></i>
-              <small>Proficient</small>
+              <i class="fab fa-sass"><span>Sass</span></i>
             </div>
 
             <div>
-              <i class="fab fa-js-square"><span>Javascript</span></i>
-              <small>Proficient</small>
+              <i class="fab fa-js-square"><span>js</span></i>
             </div>
             <div>
               <i class="fab fa-php"><span>Php</span></i>
-              <small>Proficient</small>
             </div>
             <div>
-              <i class="fab fa-github"><span>github</span></i>
-              <small>Proficient</small>
+              <i class="fab fa-git-alt"><span>git</span></i>
             </div>
-          </div>
-          <a class="btn" href="#skills" id="viewAll">Other Skills</a>
-        </div>
-        <!--skills Modal-->
-        <div class="modal flex flex-jcc flex-aic">
-          <div class="modal__content">
-            <span class="close">&times;</span>
-            <div class="other_skills">
-              <ul class="flex flex-jcc">
-                <li>
-                  <span>wordpress</span>
-                </li>
-                <li>
-                  <span>Sass</span>
-                </li>
-                <li>
-                  <span>Cpanel</span>
-                </li>
-                <li>
-                  <span>Netlify</span>
-                </li>
-                <li>
-                  <span>vercel</span>
-                </li>
-                <li>
-                  <span>heroku</span>
-                </li>
-                <li>
-                  <span>Sql</span>
-                </li>
-                <li>
-                  <span>PhpAdmin</span>
-                </li>
-                <li>
-                  <span>Vscode</span>
-                </li>
-              </ul>
+            <div>
+              <i class="fab fa-wordpress"><span>Wordpress</span></i>
+            </div>
+            <div>
+              <i class="fab fa-bootstrap"><span>Bootstrap</span></i>
+            </div>
+            <div>
+              <i class="fab fa-cpanel"> <span>Cpanel</span></i>
+            </div>
+            <div>
+              <i class="fab fa-vuejs"> <span>Vuejs</span></i>
             </div>
           </div>
         </div>
-        <!--skills Modal end-->
       </section>
       <!--skills end-->
 
@@ -181,7 +178,7 @@
           </div>
           <div class="project-tile grid">
             <div class="card">
-              <div class="container">
+              <div class="contain">
                 <div class="card_title">
                   <h4><b>Simple Form</b></h4>
                   <small>Html + Css</small>
@@ -204,7 +201,7 @@
             </div>
 
             <div class="card">
-              <div class="container">
+              <div class="contain">
                 <div class="card_title">
                   <h4><b>Testimonial Slider</b></h4>
                   <small>Html + Css + Js</small>
@@ -227,7 +224,7 @@
             </div>
 
             <div class="card">
-              <div class="container">
+              <div class="contain">
                 <div class="card_title">
                   <h4><b>Todo App</b></h4>
                   <small>Html + Scss + Js</small>
@@ -249,8 +246,8 @@
               </div>
             </div>
 
-            <div class="card">
-              <div class="container">
+            <div class="card" id="last">
+              <div class="contain">
                 <div class="card_title">
                   <h4><b>Portfolio & Blog</b></h4>
                   <small>Scss + Php + Sql</small>
@@ -273,32 +270,26 @@
               </div>
             </div>
           </div>
-          <a class="btn" href="#" id="more">More</a>
+          <a class="btn" href="#projects" id="more">More</a>
         </div>
       </section>
       <!--project end-->
 
-      <!--Contact-modal start-->
+      <!--Contact start-->
       <section id="contact" class="contact flex flex-aic flex-jcc">
         <div class="container">
           <div class="title">
             <h2>Contact</h2>
           </div>
           <form action="" id="form" class="form grid">
-            <div class="name">
-              <label for="name">Name:</label>
-              <input type="text" name="name" id="name" />
-            </div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" />
 
-            <div class="subject">
-              <label for="subject">Subject:</label>
-              <input type="text" name="subject" id="subject" />
-            </div>
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject" />
 
-            <div class="message">
-              <label for="message">Message:</label>
-              <textarea name="message" id="message"></textarea>
-            </div>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message"></textarea>
 
             <a name="send" type="submit" class="btn">Send</a>
           </form>
@@ -309,7 +300,7 @@
       <!--footer start-->
       <footer id="footer" class="footer flex flex-jcc flex-tac flex-aic">
         <div class="container">
-          <h2 class="footer_header">Let's work together...</h2>
+          <h2>Let's work together...</h2>
 
           <ul class="footer-item flex flex-jcc">
             <li>
