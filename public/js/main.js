@@ -1,3 +1,14 @@
+//timer for loader
+function preLoad() {
+  let load = setTimeout(showWrapper, 3000);
+}
+
+//show Wrapper
+function showWrapper() {
+  document.querySelector(".loader").style.display = "none";
+  document.querySelector(".wrapper").style.display = "block";
+}
+
 const harm = document.querySelector(".nav__harm");
 const body = document.querySelector("body");
 const nav = document.querySelector(".nav");
@@ -63,18 +74,4 @@ for (let index = 0; index < links.length; index++) {
   });
 }
 
-/*
-viewAll.addEventListener("click", () => {
-  modalAll.style.display = "block";
-});
-
-close.addEventListener("click", () => {
-  modalAll.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-  if (e.target == modalAll) {
-    modalAll.style.display = "none";
-  }
-});
-*/
+//add authentication to form

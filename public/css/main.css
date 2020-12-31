@@ -1,4 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.slideUp {
+  position: relative;
+  -webkit-animation: slideUp 1s;
+          animation: slideUp 1s;
+}
+
+@-webkit-keyframes slideUp {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -103,8 +131,95 @@ body {
   overflow: hidden;
 }
 
-.wrapper {
+.loader {
   height: 100vh;
+  width: 100%;
+  background: #333333;
+  color: #f4f4f8;
+  text-transform: capitalize;
+  z-index: 700;
+  overflow: hidden;
+}
+
+.loader .loading {
+  height: 200px;
+  width: 200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+  border-top: 10px solid #201c1c;
+  position: relative;
+  -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+}
+
+.loader .loading span {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  line-height: 200px;
+  -webkit-animation: irotate 2s linear infinite;
+          animation: irotate 2s linear infinite;
+}
+
+.loader .loading::before, .loader .loading::after {
+  content: "";
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.loader .loading::before {
+  border-top: 10px solid blanchedalmond;
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+
+.loader .loading::after {
+  border-top: 10px solid grey;
+  -webkit-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+}
+
+@-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes irotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    color: blanchedalmond;
+  }
+}
+
+@keyframes irotate {
+  to {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    color: blanchedalmond;
+  }
+}
+
+.wrapper {
+  display: none;
+  height: 100%;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
       grid-template-areas: "header" "main" "about" "skills" "projects" "contact" "footer";
@@ -357,10 +472,6 @@ header .overlay .mobile_social {
 
 header .overlay .mobile_social ul {
   margin-top: 1rem;
-}
-
-main {
-  border-bottom: 1px dotted rgba(128, 128, 128, 0.2);
 }
 
 main .container {
