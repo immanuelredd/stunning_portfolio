@@ -69,7 +69,7 @@ a {
 }
 
 a.link {
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 a.link:hover {
@@ -81,11 +81,11 @@ a.btn {
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0.5rem 1rem;
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 a.btn:hover {
-  background-color: #000000;
+  background-color: #201c1c;
   color: blanchedalmond;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
@@ -95,8 +95,8 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Montserrat", sans-serif;
-  background-color: #201c1c;
-  color: #fcf6f5ff;
+  background-color: #333333;
+  color: #f4f4f8;
 }
 
 .noscroll {
@@ -119,7 +119,7 @@ body {
 }
 
 .wrapper .header a {
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 .wrapper .main {
@@ -127,7 +127,7 @@ body {
   -ms-grid-column: 1;
   grid-area: main;
   height: 100vh;
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 .wrapper .about {
@@ -140,7 +140,7 @@ body {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: skills;
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 .wrapper .projects {
@@ -198,7 +198,7 @@ body {
   height: 0.2rem;
   position: absolute;
   margin-top: 0.3rem;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: grey;
 }
 
 .wrapper .about .container .title hr,
@@ -212,7 +212,7 @@ body {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: footer;
-  background-color: #000000;
+  background-color: #201c1c;
   color: white;
 }
 
@@ -253,9 +253,13 @@ header .nav__bar {
 }
 
 header .nav__bar li a:hover {
-  background-color: #201c1c;
+  background-color: #333333;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  color: blanchedalmond;
+}
+
+header .nav__bar li a.active {
   color: blanchedalmond;
 }
 
@@ -317,38 +321,61 @@ header .overlay {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #000000;
+  background-color: #201c1c;
 }
 
 header .overlay .mobile_nav {
-  margin-top: 2.3rem;
+  background-color: rgba(32, 28, 28, 0.5);
+  width: 80%;
+  margin: 5rem auto 0;
 }
 
 header .overlay .mobile_nav li a {
   display: block;
   width: 100%;
-  border-bottom: 1px solid #fcf6f5ff;
+  border-bottom: 1px solid #f4f4f8;
   padding: 1rem 0;
   padding-left: 1.2rem;
   text-transform: uppercase;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
 }
 
 header .overlay .mobile_nav li a:hover {
-  background-color: #201c1c;
+  background-color: #333333;
   color: blanchedalmond;
   padding-left: 5rem;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
+header .overlay .mobile_nav li a.active {
+  color: blanchedalmond;
+}
+
+header .overlay .mobile_social {
+  margin-top: 8rem;
+}
+
+header .overlay .mobile_social ul {
+  margin-top: 1rem;
+}
+
+main {
+  border-bottom: 1px dotted rgba(128, 128, 128, 0.2);
+}
+
 main .container {
-  border: 1px dotted rgba(255, 235, 205, 0.2);
+  border: 1px dotted rgba(128, 128, 128, 0.2);
 }
 
 main .container .text {
   padding: 1rem;
+  color: #f4f4f8;
+}
+
+main .container .text .image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
 
 main .container .text h1 {
@@ -375,7 +402,7 @@ main .container .text a {
   line-height: 2rem;
   font-size: 1.2rem;
   margin: 2rem 0;
-  color: gray;
+  color: grey;
   text-align: justify;
 }
 
@@ -386,7 +413,7 @@ main .container .text a {
 }
 
 .about .container .text p span.name {
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 .about .container a.btn {
@@ -402,15 +429,12 @@ main .container .text a {
 
 .skills .container .row {
   margin: 2rem auto;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
 .skills .container .row div {
-  width: 120px;
-  height: 90px;
   margin: 1rem auto;
-  border: 1px solid #fcf6f5ff;
   border-radius: 1rem 0 1rem 0;
   position: relative;
 }
@@ -419,19 +443,24 @@ main .container .text a {
   font-size: 2rem;
   padding: 0.5rem;
   margin: 0.5rem auto;
+  color: #f4f4f8;
 }
 
 .skills .container .row div i span {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1rem;
   text-transform: uppercase;
   position: inherit;
   margin-top: 1rem;
+  color: grey;
+  font-weight: bold;
+  letter-spacing: normal;
 }
 
 @media (max-width: 767px) {
   .skills .container .row div i span {
-    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
     margin-top: 0.7rem;
   }
 }
@@ -440,32 +469,10 @@ main .container .text a {
   display: none;
 }
 
-.skills .container .row div:hover {
-  background-color: #000000;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  color: blanchedalmond;
-  -webkit-box-shadow: 1px 2px 2px blanchedalmond;
-          box-shadow: 1px 2px 2px blanchedalmond;
-}
-
-@media (max-width: 424px) {
-  .skills .container .row div {
-    width: 100px;
-  }
-}
-
-@media (min-width: 768px) {
-  .skills .container .row div {
-    width: 200px;
-    height: 100px;
-  }
-}
-
 @media (min-width: 768px) {
   .skills .container .row {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -481,71 +488,8 @@ main .container .text a {
   }
 }
 
-.skills .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#000000), to(rgba(255, 255, 255, 0.4)));
-  background-image: linear-gradient(to bottom right, #000000, rgba(255, 255, 255, 0.4));
-  z-index: 500;
-}
-
-.skills .modal__content {
-  background-color: #000000;
-  color: #fcf6f5ff;
-  -webkit-transform: translateY(50%);
-          transform: translateY(50%);
-  z-index: 600;
-  width: 80%;
-  height: 300px;
-  margin: 0 auto;
-}
-
-.skills .modal__content .close {
-  float: right;
-  font-size: 3rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-}
-
-.skills .modal__content .other_skills {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.skills .modal__content .other_skills ul {
-  width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-@media (min-width: 768px) {
-  .skills .modal__content .other_skills ul {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.5rem;
-  }
-}
-
-.skills .modal__content .other_skills ul li {
-  margin: 0.5rem;
-  background-color: blanchedalmond;
-  padding: 0.5rem;
-  color: #201c1c;
-  cursor: pointer;
-}
-
-@media (max-width: 424px) {
-  .skills .modal__content {
-    -webkit-transform: translateY(35%);
-            transform: translateY(35%);
-  }
+.projects {
+  padding-bottom: 3rem;
 }
 
 .projects .container {
@@ -569,11 +513,9 @@ main .container .text a {
   width: 300px;
   height: 250px;
   margin: 1rem auto;
-  background-color: #000000;
-  color: #fcf6f5ff;
+  background-color: #201c1c;
+  color: #f4f4f8;
   border-radius: 0 1rem 0 1rem;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
 }
 
 .projects .container .project-tile .card:hover {
@@ -584,6 +526,12 @@ main .container .text a {
 
 .projects .container .project-tile .card:last-child {
   display: none;
+}
+
+.projects .container .project-tile .card .contain {
+  width: 95%;
+  padding: 1rem;
+  margin: auto;
 }
 
 .projects .container .project-tile .card .card_title {
@@ -608,7 +556,7 @@ main .container .text a {
 }
 
 .projects .container .project-tile .card .card_icon a {
-  color: #fcf6f5ff;
+  color: #f4f4f8;
   cursor: pointer;
 }
 
@@ -658,6 +606,10 @@ main .container .text a {
   }
 }
 
+.contact {
+  padding-top: 1rem;
+}
+
 .contact .container .title {
   margin-bottom: 2rem;
 }
@@ -677,6 +629,9 @@ main .container .text a {
   padding: 0.5rem;
   outline: none;
   margin-bottom: 0.5rem;
+  background: #201c1c;
+  color: #f4f4f8;
+  border: none;
 }
 
 .contact .container .form textarea {
@@ -684,6 +639,9 @@ main .container .text a {
   height: 200px;
   padding: 0.5rem;
   outline: none;
+  background: #201c1c;
+  color: #f4f4f8;
+  border: none;
 }
 
 .contact .container .form .btn {
@@ -706,11 +664,11 @@ footer .container .footer-item li {
 }
 
 footer .container .copyright {
-  color: gray;
+  color: grey;
 }
 
 footer a {
-  color: #fcf6f5ff;
+  color: #f4f4f8;
 }
 
 footer a:hover {
@@ -744,6 +702,6 @@ footer a i {
 }
 
 .sticky {
-  background-color: #000000;
+  background-color: #201c1c;
 }
 /*# sourceMappingURL=main.css.map */
